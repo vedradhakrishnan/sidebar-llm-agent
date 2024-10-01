@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/background.ts","./src/main.tsx","./src/components/ui/avatar.tsx","./src/components/ui/button.tsx","./src/components/ui/input.tsx","./src/components/ui/scroll-area.tsx","./src/lib/utils.ts"],"version":"5.6.2"}

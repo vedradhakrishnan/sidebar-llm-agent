@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "My Chrome Side Panel Extension",
+    "version": "1.0",
+    "description": "A Chrome extension that uses the Side Panel API.",
+    "permissions": ["sidePanel", "scripting", "tabs", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+
+    "background": {
+      "service_worker": "assets/background.js" 
+    },
+  
+    "action": {},
+  
+    "side_panel": {
+      "default_path": "index.html"
+    },
+  
+    "icons": {
+      "128": "icon128.png"
+    }
+  }
+  
