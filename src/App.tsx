@@ -31,6 +31,10 @@ export default function Component() {
           ...prevMessages,
           { id: Date.now(), text: message.text, sender: "other" },
         ]);
+
+        //inject into page
+        // chrome.runtime.sendMessage({ action: "injectCode", code: message.text });
+
       }
     });
   }, []);

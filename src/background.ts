@@ -36,6 +36,26 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
               elementsJSON
             );
 
+            //inject output
+            if (currentTab && currentTab.id) {
+              chrome.scripting.executeScript(
+                {
+                  target: { tabId: currentTab.id },
+                  func: (code: string) => {
+                    const script = document.createElement("script");
+                    script.textContent = code;
+                    (document.head || document.documentElement).appendChild(script);
+                    script.parentNode?.removeChild(script);
+                  },
+                  args: [responseText],
+                  world: "MAIN",
+                },
+                () => {
+                  console.log("Code injected into the page.");
+                }
+              );
+            }
+
             // Send response back to the React app
             chrome.runtime.sendMessage({ sender: 'other', text: responseText });
           }
