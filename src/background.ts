@@ -90,6 +90,11 @@ Your goal is to generate JavaScript code that can be injected into the browser's
       max_tokens: 1000,
       temperature: 0.7,
     }),
+    // body: JSON.stringify({
+    //   model: 'o1-preview', // Or the model you choose
+    //   messages: [{ role: 'user', content: prompt }],
+    //   max_completion_tokens: 1000
+    // }),
   });
 
   const data = await response.json();
